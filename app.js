@@ -47,3 +47,10 @@
 // for (i = num1; i <= num1; i++) {
 //     document.writeln(`${num} x ${i} = ${num * num1}` + "<br>")
 // }
+
+// const p = document.getElementById('P')
+// p.style.color = "green"
+// p.style.width = "100%"
+// p.style.fontSize = "60px"
+// p.style.height = "450px"
+// p.style.fontWeight = "bold"
