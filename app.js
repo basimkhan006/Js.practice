@@ -67,42 +67,123 @@
 // mainDiv.style.backgroundColor = "green"
 
 
-const navbar = document.createElement('nav')
-navbar.style.width = "100%"
-navbar.style.height = "100px"
-// navbar.style.backgroundColor = "black"
-navbar.style.border = "2px solid yellow"
-navbar.style.display = "flex";
-navbar.style.alignItems = "center";
-navbar.style.justifyContent = "space-evenly";
-navbar.setAttribute('class','navbar')
+// const navbar = document.createElement('nav')
+// navbar.style.width = "100%"
+// navbar.style.height = "100px"
+// // navbar.style.backgroundColor = "black"
+// navbar.style.border = "2px solid yellow"
+// navbar.style.display = "flex";
+// navbar.style.alignItems = "center";
+// navbar.style.justifyContent = "space-evenly";
+// navbar.setAttribute('class','navbar')
 
-document.body.appendChild(navbar)
+// document.body.appendChild(navbar)
 
-const heading = document.createElement('h1');
-heading.innerHTML = "Nav Bar";
-heading.style.color = "white";
-heading.setAttribute('class','heading')
+// const heading = document.createElement('h1');
+// heading.innerHTML = "Nav Bar";
+// heading.style.color = "white";
+// heading.setAttribute('class','heading')
 
 
-const home = document.createElement('a');
-home.innerText = "Home";
-home.style.color = "white";
-home.setAttribute('class','home')
+// const home = document.createElement('a');
+// home.innerText = "Home";
+// home.style.color = "white";
+// home.setAttribute('class','home')
 
-const about = document.createElement('a');
-about.innerText = "About";
-about.style.color = "white";
-about.setAttribute('class','about')
+// const about = document.createElement('a');
+// about.innerText = "About";
+// about.style.color = "white";
+// about.setAttribute('class','about')
 
-const contact = document.createElement('a');
-contact.innerText = "Contact";
-contact.style.color = "white";
-contact.setAttribute('class','contact')
+// const contact = document.createElement('a');
+// contact.innerText = "Contact";
+// contact.style.color = "white";
+// contact.setAttribute('class','contact')
 
-navbar.appendChild(heading);
-navbar.appendChild(home);
-navbar.appendChild(about);
-navbar.appendChild(contact);
+// navbar.appendChild(heading);
+// navbar.appendChild(home);
+// navbar.appendChild(about);
+// navbar.appendChild(contact);
 
-document.body.appendChild(navbar);
+// document.body.appendChild(navbar);
+
+
+const app = document.getElementById("app");
+
+const formBox = document.createElement("div");
+formBox.className = "form-box";
+
+const title = document.createElement("h2");
+title.innerText = "Create Account";
+
+const form = document.createElement("form");
+
+const fields = [
+  { label: "Full Name", type: "text", placeholder: "Enter your name", id: "name" },
+  { label: "Email", type: "email", placeholder: "Enter your email", id: "email" },
+  { label: "Password", type: "password", placeholder: "Enter password", id: "password" },
+  { label: "Confirm Password", type: "password", placeholder: "Confirm password", id: "confirmPassword" }
+];
+
+fields.forEach(function(field) {
+  const inputGroup = document.createElement("div");
+  inputGroup.className = "input-group";
+
+  const label = document.createElement("label");
+  label.innerText = field.label;
+
+  const input = document.createElement("input");
+  input.type = field.type;
+  input.placeholder = field.placeholder;
+  input.id = field.id;
+
+  inputGroup.appendChild(label);
+  inputGroup.appendChild(input);
+  form.appendChild(inputGroup);
+});
+
+const button = document.createElement("button");
+button.type = "submit";
+button.innerText = "Sign Up";
+
+const message = document.createElement("p");
+message.className = "message";
+
+form.appendChild(button);
+form.appendChild(message);
+
+formBox.appendChild(title);
+formBox.appendChild(form);
+app.appendChild(formBox);
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+  if (name === "" || email === "" || password === "" || confirmPassword === "") {
+    message.innerText = "Please fill all fields!";
+    message.style.color = "red";
+    return;
+  }
+
+  if (password.length < 6) {
+    message.innerText = "Password must be at least 6 characters!";
+    message.style.color = "red";
+    return;
+  }
+
+  if (password !== confirmPassword) {
+    message.innerText = "Passwords do not match!";
+    message.style.color = "red";
+    return;
+  }
+
+  message.innerText = "Account created successfully!";
+  message.style.color = "green";
+
+  form.reset();
+});
