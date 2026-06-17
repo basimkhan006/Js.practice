@@ -108,82 +108,147 @@
 // document.body.appendChild(navbar);
 
 
+// const app = document.getElementById("app");
+
+// const formBox = document.createElement("div");
+// formBox.className = "form-box";
+
+// const title = document.createElement("h2");
+// title.innerText = "Create Account";
+
+// const form = document.createElement("form");
+
+// const fields = [
+//   { label: "Full Name", type: "text", placeholder: "Enter your name", id: "name" },
+//   { label: "Email", type: "email", placeholder: "Enter your email", id: "email" },
+//   { label: "Password", type: "password", placeholder: "Enter password", id: "password" },
+//   { label: "Confirm Password", type: "password", placeholder: "Confirm password", id: "confirmPassword" }
+// ];
+
+// fields.forEach(function(field) {
+//   const inputGroup = document.createElement("div");
+//   inputGroup.className = "input-group";
+
+//   const label = document.createElement("label");
+//   label.innerText = field.label;
+
+//   const input = document.createElement("input");
+//   input.type = field.type;
+//   input.placeholder = field.placeholder;
+//   input.id = field.id;
+
+//   inputGroup.appendChild(label);
+//   inputGroup.appendChild(input);
+//   form.appendChild(inputGroup);
+// });
+
+// const button = document.createElement("button");
+// button.type = "submit";
+// button.innerText = "Sign Up";
+
+// const message = document.createElement("p");
+// message.className = "message";
+
+// form.appendChild(button);
+// form.appendChild(message);
+
+// formBox.appendChild(title);
+// formBox.appendChild(form);
+// app.appendChild(formBox);
+
+// form.addEventListener("submit", function(e) {
+//   e.preventDefault();
+
+//   const name = document.getElementById("name").value.trim();
+//   const email = document.getElementById("email").value.trim();
+//   const password = document.getElementById("password").value.trim();
+//   const confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+//   if (name === "" || email === "" || password === "" || confirmPassword === "") {
+//     message.innerText = "Please fill all fields!";
+//     message.style.color = "red";
+//     return;
+//   }
+
+//   if (password.length < 6) {
+//     message.innerText = "Password must be at least 6 characters!";
+//     message.style.color = "red";
+//     return;
+//   }
+
+//   if (password !== confirmPassword) {
+//     message.innerText = "Passwords do not match!";
+//     message.style.color = "red";
+//     return;
+//   }
+
+//   message.innerText = "Account created successfully!";
+//   message.style.color = "green";
+
+//   form.reset();
+// });
+
+
 const app = document.getElementById("app");
 
-const formBox = document.createElement("div");
-formBox.className = "form-box";
+app.style.width = "50%";
+app.style.height = "500px";
+app.style.backgroundColor = "blue";
+app.style.border = "2px solid gray";
+app.style.display = "flex";
+app.style.flexDirection = "column";
+app.style.justifyContent = "center";
+app.style.alignItems = "center";
+app.style.gap = "15px";
 
-const title = document.createElement("h2");
-title.innerText = "Create Account";
+// Name Label
+const labelName = document.createElement("label");
+labelName.innerText = "Name";
+labelName.style.color = "white";
 
-const form = document.createElement("form");
+const nameInput = document.createElement("input");
+nameInput.type = "text";
+nameInput.placeholder = "Enter Name";
+app.appendChild(labelName);
+app.appendChild(nameInput);
 
-const fields = [
-  { label: "Full Name", type: "text", placeholder: "Enter your name", id: "name" },
-  { label: "Email", type: "email", placeholder: "Enter your email", id: "email" },
-  { label: "Password", type: "password", placeholder: "Enter password", id: "password" },
-  { label: "Confirm Password", type: "password", placeholder: "Confirm password", id: "confirmPassword" }
-];
+// Last Name Label
+const labelLast = document.createElement("label");
+labelLast.innerText = "Last Name";
+labelLast.style.color = "white";
 
-fields.forEach(function(field) {
-  const inputGroup = document.createElement("div");
-  inputGroup.className = "input-group";
+const lastInput = document.createElement("input");
+lastInput.type = "text";
+lastInput.placeholder = "Enter Last Name";
 
-  const label = document.createElement("label");
-  label.innerText = field.label;
+app.appendChild(labelLast);
+app.appendChild(lastInput);
 
-  const input = document.createElement("input");
-  input.type = field.type;
-  input.placeholder = field.placeholder;
-  input.id = field.id;
+// Email Label
+const labelEmail = document.createElement("label");
+labelEmail.innerText = "Email";
+labelEmail.style.color = "white";
 
-  inputGroup.appendChild(label);
-  inputGroup.appendChild(input);
-  form.appendChild(inputGroup);
-});
+const emailInput = document.createElement("input");
+emailInput.type = "email";
+emailInput.placeholder = "Enter Email";
 
-const button = document.createElement("button");
-button.type = "submit";
-button.innerText = "Sign Up";
+app.appendChild(labelEmail);
+app.appendChild(emailInput);
 
-const message = document.createElement("p");
-message.className = "message";
+const button = document.createElement("a")
+button.innerHTML = "Submit";
+button.style.width = "60px";
+button.style.display = "flex";
+button.style.alignItems = "center";
+button.style.justifyContent = "center";
+button.style.border = "3px solid black";
+button.style.color = "black";
+button.style.backgroundColor = "gray";
+button.href = './login.html'
+button.onclick = function() {
+  alert("Button was clicked!");
+};
 
-form.appendChild(button);
-form.appendChild(message);
+app.appendChild(button);
 
-formBox.appendChild(title);
-formBox.appendChild(form);
-app.appendChild(formBox);
-
-form.addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value.trim();
-  const confirmPassword = document.getElementById("confirmPassword").value.trim();
-
-  if (name === "" || email === "" || password === "" || confirmPassword === "") {
-    message.innerText = "Please fill all fields!";
-    message.style.color = "red";
-    return;
-  }
-
-  if (password.length < 6) {
-    message.innerText = "Password must be at least 6 characters!";
-    message.style.color = "red";
-    return;
-  }
-
-  if (password !== confirmPassword) {
-    message.innerText = "Passwords do not match!";
-    message.style.color = "red";
-    return;
-  }
-
-  message.innerText = "Account created successfully!";
-  message.style.color = "green";
-
-  form.reset();
-});
