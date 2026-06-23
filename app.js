@@ -189,66 +189,170 @@
 // });
 
 
-const app = document.getElementById("app");
+// const app = document.getElementById("app");
 
-app.style.width = "50%";
-app.style.height = "500px";
-app.style.backgroundColor = "blue";
-app.style.border = "2px solid gray";
-app.style.display = "flex";
-app.style.flexDirection = "column";
-app.style.justifyContent = "center";
-app.style.alignItems = "center";
-app.style.gap = "15px";
+// app.style.width = "50%";
+// app.style.height = "500px";
+// app.style.backgroundColor = "blue";
+// app.style.border = "2px solid gray";
+// app.style.display = "flex";
+// app.style.flexDirection = "column";
+// app.style.justifyContent = "center";
+// app.style.alignItems = "center";
+// app.style.gap = "15px";
 
-// Name Label
-const labelName = document.createElement("label");
-labelName.innerText = "Name";
-labelName.style.color = "white";
+// // Name Label
+// const labelName = document.createElement("label");
+// labelName.innerText = "Name";
+// labelName.style.color = "white";
 
-const nameInput = document.createElement("input");
-nameInput.type = "text";
-nameInput.placeholder = "Enter Name";
-app.appendChild(labelName);
-app.appendChild(nameInput);
+// const nameInput = document.createElement("input");
+// nameInput.type = "text";
+// nameInput.placeholder = "Enter Name";
+// app.appendChild(labelName);
+// app.appendChild(nameInput);
 
-// Last Name Label
-const labelLast = document.createElement("label");
-labelLast.innerText = "Last Name";
-labelLast.style.color = "white";
+// // Last Name Label
+// const labelLast = document.createElement("label");
+// labelLast.innerText = "Last Name";
+// labelLast.style.color = "white";
 
-const lastInput = document.createElement("input");
-lastInput.type = "text";
-lastInput.placeholder = "Enter Last Name";
+// const lastInput = document.createElement("input");
+// lastInput.type = "text";
+// lastInput.placeholder = "Enter Last Name";
 
-app.appendChild(labelLast);
-app.appendChild(lastInput);
+// app.appendChild(labelLast);
+// app.appendChild(lastInput);
 
-// Email Label
-const labelEmail = document.createElement("label");
-labelEmail.innerText = "Email";
-labelEmail.style.color = "white";
+// // Email Label
+// const labelEmail = document.createElement("label");
+// labelEmail.innerText = "Email";
+// labelEmail.style.color = "white";
 
-const emailInput = document.createElement("input");
-emailInput.type = "email";
-emailInput.placeholder = "Enter Email";
+// const emailInput = document.createElement("input");
+// emailInput.type = "email";
+// emailInput.placeholder = "Enter Email";
 
-app.appendChild(labelEmail);
-app.appendChild(emailInput);
+// app.appendChild(labelEmail);
+// app.appendChild(emailInput);
 
-const button = document.createElement("a")
-button.innerHTML = "Submit";
-button.style.width = "60px";
-button.style.display = "flex";
-button.style.alignItems = "center";
-button.style.justifyContent = "center";
-button.style.border = "3px solid black";
-button.style.color = "black";
-button.style.backgroundColor = "gray";
-button.href = './login.html'
-button.onclick = function() {
-  alert("Button was clicked!");
-};
+// const button = document.createElement("a")
+// button.innerHTML = "Submit";
+// button.style.width = "60px";
+// button.style.display = "flex";
+// button.style.alignItems = "center";
+// button.style.justifyContent = "center";
+// button.style.border = "3px solid black";
+// button.style.color = "black";
+// button.style.backgroundColor = "gray";
+// button.href = './login.html'
+// button.onclick = function() {
+//   alert("Button was clicked!");
+// };
 
-app.appendChild(button);
+// app.appendChild(button);
+
+// const input = document.getElementById("taskInput");
+// const app = document.getElementById("app");
+// const taskList = document.getElementById("taskList");
+
+// app.addEventListener("click", () => {
+
+//     if (input.value === "") {
+//         alert("Enter Task!");
+//         return;
+//     }
+
+//     const li = document.createElement("li");
+//     li.textContent = input.value;
+
+//     const deleteapp = document.createElement("button");
+//     deleteapp.textContent = "Delete";
+
+//     deleteapp.addEventListener("click", function () {
+//         li.remove();
+//     });
+
+//     li.appendChild(deleteapp);
+//     taskList.appendChild(li);
+
+//     input.value = "";
+
+//     const hi = document.createElement("hi");
+//     hi.textContent = input.value;
+
+//     const editeapp = document.createElement("button");
+//     editapp.textContent = "Edit";
+
+//     editapp.addEventListener("click", function () {
+//         hi.edit();
+//     });
+
+//     hi.appendChild(editapp);
+//     taskList.appendChild(hi);
+
+// })
+
+// const input = document.getElementById("taskInput");
+// const app = document.getElementById("app");
+// const taskList = document.getElementById("taskList");
+
+// app.addEventListener("click", () => {
+//     if (input.value.trim() === "") {
+//         alert("Enter todo");
+//         return;
+//     }
+
+//     const li = document.createElement("li");
+
+//     // localStorage(JSON.parse("list", "value"))
+
+//     const span = document.createElement("span");
+//     span.textContent = input.value;
+
+//     const deleteBtn = document.createElement("button");
+//     deleteBtn.textContent = "Delete";
+
+//     deleteBtn.addEventListener("click", function () {
+//         li.remove();
+//     });
+
+//     const editBtn = document.createElement("button");
+//     editBtn.textContent = "Edit";
+
+//     editBtn.addEventListener("click", function () {
+//         const newTask = prompt("Edit your task:", span.textContent);
+
+//         if (newTask !== null && newTask.trim() !== "") {
+//             span.textContent = newTask;
+//         }
+//     });
+
+//     li.appendChild(span);
+//     li.appendChild(deleteBtn);
+//     li.appendChild(editBtn);
+
+//     taskList.appendChild(li);
+
+
+
+
+
+//     input.value = "";
+// });
+
+
+Student.prototype.module = function (message) {
+    console.log("this module is 3")
+}
+
+function Student(name, age, module) {
+    this.name = name;
+    this.age = age
+    // this.module = module
+}
+
+const student1 = new Student("ali", 20, "module 3")
+
+console.log(student1)
 
